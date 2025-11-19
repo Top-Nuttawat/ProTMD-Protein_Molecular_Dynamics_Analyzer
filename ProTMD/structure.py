@@ -264,4 +264,4 @@ class Protein_Structure:
                     outfile.write(f"CA {atom_coord[0]:.3f} {atom_coord[1]:.3f} {atom_coord[2]:.3f}\n")
 
         print(f" Eigenmode trajectory written to {output_filename}")
-        return output_filename
+        return output_filename , eigvec_reshaped
