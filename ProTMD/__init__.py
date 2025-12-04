@@ -5,7 +5,7 @@ from .ProTNetwork import Protein_Network
 
 __all__ = [
     "Protein_Structure",
-    "Protein_Network",
+    "Temporal_ProteinNetwork",
 ]
 
 __version__ = "1.0.0"
