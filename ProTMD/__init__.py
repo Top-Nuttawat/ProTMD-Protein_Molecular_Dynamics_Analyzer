@@ -1,7 +1,7 @@
 # ProTMD/__init__.py
 
 from .ProTstructure import Protein_Structure
-from .ProTNetwork import Protein_Network
+from .ProTNetwork import Temporal_ProteinNetwork
 
 __all__ = [
     "Protein_Structure",
