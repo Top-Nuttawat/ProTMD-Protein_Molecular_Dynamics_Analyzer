@@ -41,6 +41,11 @@ class Temporal_ProteinNetwork:
         self.n_residues = len(self.CA_atoms)
         self.n_frames = len(self.universe.trajectory) - self.start_frame
 
+        self.CA_positions()
+        self.Temporal_Adjacency_Matrix()
+        self.Temporal_Communicability_Matrix()
+
+
 
     # Position of Cα atom for each residue over all trajectory frames
     def CA_positions(self):
@@ -128,7 +133,7 @@ class Temporal_ProteinNetwork:
         plt.colorbar()
         plt.show()
 
-    def plot3D_Communicability_matrix(self, frame=0):
+    def plot3D_Communicability_matrix(self, frame=None):
         """Plot exp(A) as a 3D surface for selected frame."""
 
         self.Temporal_Communicability_Matrix()
