@@ -55,7 +55,7 @@ class Temporal_ProteinNetwork:
             CA_coords.append(self.CA_atoms.positions.copy())
 
         self.CA_coords = np.array(CA_coords) # shape: (n_frames, n_CA, 3)
-        print(f"Cα coordinates shape = {self.CA_coords.shape}")
+        print(f"All frames of Cα coordinates shape from MD Trajectory = {self.CA_coords.shape}")
         return self.CA_coords
 
     @staticmethod
