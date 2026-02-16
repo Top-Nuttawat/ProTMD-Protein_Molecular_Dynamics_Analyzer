@@ -1,8 +1,9 @@
 # ProTMD - Protein Molecular Dynamics Analyzer
 
+
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/b7db94a4-8306-447e-b2ef-84afecffceda" width="450" alt="Analysis 1" />
-  <img src="image.png" width="450" alt="Analysis 2" />
+  <img src="https://github.com/user-attachments/assets/b7db94a4-8306-447e-b2ef-84afecffceda" width="48%" />
+  <img src="image.png" width="48%" />
 </p>
 
 
