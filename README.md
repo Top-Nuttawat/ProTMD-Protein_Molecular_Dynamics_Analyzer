@@ -1,7 +1,7 @@
 # ProTMD - Protein Molecular Dynamics Analyzer
 
 <p align="center">
-  <img src="{865CF69E-4CC2-44B8-A96A-FF105C6E40E3}.png" width="400" height="400" />
+  <img src="image-3.png" width="400" height="400" />
   <img src="image.png" width="400" height="400" />
 </p>
 
