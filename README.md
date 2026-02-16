@@ -29,29 +29,58 @@ Clone the repository and install dependencies:
 
 ```bash
 git clone https://github.com/Top-Nuttawat/ProTMD-Protein_Molecular_Dynamics_Analyzer.git
+```
+```bash
 cd ProTMD-Protein_Molecular_Dynamics_Analyzer
+```
+```bash
 pip install -r requirements.txt
 ```
+For jupyter notebook
+
+```bash
+!pip install git+https://github.com/Top-Nuttawat/ProTMD-Protein_Molecular_Dynamics_Analyzer.git
+```
+
+
 ---
 ## 📖 Quick Start
+
+```bash
+# ProTMD-Protein_Molecular_Dynamics_Analyzer
+import ProTMD as ptmd
+from ProTMD.ProTstructure import Protein_Structure
+from ProTMD.ProTNetwork import Temporal_ProteinNetwork
+```
 
 1. Basic Structural Analysis
 
 
 ```bash
-from ProTMD import Protein_Structure
-
 # Initialize with GROMACS files
 prot = Protein_Structure("protein.gro", "trajectory.xtc")
 
-# Calculate and plot RMSD
+# MD trajectories analysis
+
 prot.compute_RMSD()
-prot.plot_RMSD(time_per_frame_ns=0.1)
+prot.compute_RMSF()
+prot.compute_Rg()
+prot.compute_DCCM()
+
+# Plot MD trajectories analysis
+
+prot.plot_RMSD()
+prot.plot_RMSF()
+prot.plot_Rg()
+prot.plot_DCCM()
+
 
 # Principal Component Analysis
-prot.compute_PCA()
-prot.plot_PCA_scree(n_modes=10)
-prot.write_eigenmode_XYZ(mode_index=0, amplitude=15.0) # Visualize PC1
+prot.compute_PCA(start=800, end=2000, trim_residues=(0, 375))
+
+prot.plot_PCA_scree()
+
+prot.write_eigenmode_XYZ(mode_index=0, amplitude=10.0) # Visualize PC1
 
 ```
 2. Temporal Network Analysis
@@ -59,16 +88,26 @@ prot.write_eigenmode_XYZ(mode_index=0, amplitude=15.0) # Visualize PC1
 Explore how residues communicate over time using graph theory.
 
 ```bash
-from ProTMD import Temporal_ProteinNetwork
+# Build network with an 7.4 Å cutoff
+Protnet = Temporal_ProteinNetwork(PDB, XTC, cutoff=7.4, start_frame=1500)
 
-# Build network with an 8.0Å cutoff
-net = Temporal_ProteinNetwork("protein.gro", "trajectory.xtc", cutoff=8.0)
+# Adjacency matrix
+
+Protnet.A_time
+
+Protnet.plot_A_matrix(frame = 50)
+
+# Communicability matrix
+Protnet.G_matrix_function_time
+
+Protnet.plotmap_Communicability_Matrix(frame = 50)
 
 # Visualize the network at a specific frame (interactive HTML)
-net.ProTNetworks(frame=100, html_name="residue_network.html")
+
+Protnet.ProTNetworks(frame = 50)
 
 # 3D Communicability Surface (exp(A))
-net.plot3D_Communicability_matrix(frame=100)
+Protnet.plot3D_Communicability_matrix(frame = 50)
 
 ```
 
@@ -112,7 +151,7 @@ Treats the protein as a dynamic graph where nodes are $C\alpha$ atoms.
 
 Nuttawat Sawang  , M.Sc. (Physics)
 
-Theoretical and Computational Physics (TCP) at Bangmod
+Theoretical and Computational Physics (TCP) at KMUTT
 
 
 📧 topza200915@gmail.com / nuttawatsawang.top@gmail.com
