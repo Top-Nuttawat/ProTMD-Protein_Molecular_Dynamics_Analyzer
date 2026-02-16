@@ -1,14 +1,11 @@
 # ProTMD - Protein Molecular Dynamics Analyzer
 
 <p align="center">
-  <img src="![alt text]({1657D510-69AA-4123-B43E-12009461C4C4}.png)" width="400" height="400" />
+  <img src="!image-1.png" width="400" height="400" />
   <img src="image.png" width="400" height="400" />
 </p>
 
-
 **ProTMD** is a Python library designed for the comprehensive analysis of Molecular Dynamics (MD) trajectories. It bridges the gap between standard structural metrics and advanced graph-theoretical analysis, allowing researchers to explore protein flexibility, essential dynamics, and temporal residue-residue communication.
-
-
 
 ---
 
