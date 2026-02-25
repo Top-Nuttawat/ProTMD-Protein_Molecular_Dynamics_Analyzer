@@ -21,7 +21,7 @@
     - Dynamic Adjacency Matrices based on distance cutoffs.
     - Communicability Analysis: Uses matrix exponentials ($e^A$) to quantify all-atom communication pathways.
 
-    
+    ![alt text](image-1.png)
 
 - Interactive Visualizations: High-quality plots using Plotly (3D surfaces, interactive line plots) and PyVis (interactive network graphs).
 
